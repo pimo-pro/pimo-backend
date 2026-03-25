@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pimo-backend
+    # rootDirectory (pedido): backend
+    rootDir: backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: PIMO_PROJECTS_DATA_DIR
+        value: /var/data/pimo/projects
